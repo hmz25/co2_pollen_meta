@@ -1,2 +1,2 @@
 # co2_pollen_meta
-meta-analysis of pollen production under elevated CO2
+meta-analysis for plant reproduction related to pollen production under elevated CO2

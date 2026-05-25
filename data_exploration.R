@@ -33,6 +33,7 @@ data_url <- "https://docs.google.com/spreadsheets/d/1Xlvh1YfJ3H5yebCseq1KC_i0rE4
 
 p_raw <- googlesheets4::read_sheet(data_url, sheet ="data", .name_repair = "universal")
 
+#filter data without SD + mean, calculate effect sizes 
 p <- p_raw %>% 
   filter(!is.na(eCO2.SD)) %>% 
   filter(!is.na(eCO2.mean)) %>% 
@@ -49,6 +50,8 @@ p <- p_raw %>%
 unique(p_raw$measurement.type)
 
 tabyl(p_raw, measurement.type)
+
+tabyl(p_raw, Experiment.Type)
 
 # summary stats -----------------------------------------------------------
 
